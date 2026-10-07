@@ -40,3 +40,6 @@
 [submodule "sw_usb_audio"]
 	path = sw_usb_audio
 	url = https://github.com/xmos/sw_usb_audio.git
+[submodule "lib_dfu"]
+	path = lib_dfu
+	url = https://github.com/xmos/lib_dfu.git

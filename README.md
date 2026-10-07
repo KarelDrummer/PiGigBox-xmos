@@ -19,7 +19,7 @@ PiGigBox-xmos/
 │   └── app_pigigbox_xk_316_mc/      app: sources + CMakeLists.txt with the build config
 │       └── src/{core,extensions}/   xua_conf*.h, board .xn, user extension hooks
 ├── lib_xua/ lib_xud/ lib_i2c/ lib_i2s/ lib_board_support/ lib_adat/ lib_spdif/ lib_mic_array/
-│   lib_sw_pll/ lib_xassert/ lib_logging/ lib_locks/ lib_xcore_math/   <- submodules, pinned
+│   lib_sw_pll/ lib_xassert/ lib_logging/ lib_locks/ lib_xcore_math/ lib_dfu/   <- submodules, pinned
 ├── sw_usb_audio/                    <- submodule: untouched upstream reference (v9.2.0)
 ├── scripts/                         build / flash / VS Code / dependency helpers
 ├── docs/                            dependencies and customisation notes
@@ -59,7 +59,8 @@ the `Unix Makefiles` generator and the application source directory. If several 
 ## Baseline vs. upstream
 
 `scripts\diff-upstream.ps1` shows the delta against upstream. Currently only
-`MIN_FREQ`/`MAX_FREQ` = 48000 in `xua_conf.h`. The baseline build was verified against the flashed
-firmware: identical code and data (only embedded source paths differ).
+`MIN_FREQ`/`MAX_FREQ` = 48000 in `xua_conf.h`. With the original sw_usb_audio 9.2.0 dependency set the build was
+verified identical to the firmware flashed on the board; the libraries have since been updated to the newest
+stable releases (see [docs/dependencies.md](docs/dependencies.md)) and that build is **not yet tested on hardware**.
 
 See [docs/dependencies.md](docs/dependencies.md) and [docs/customization.md](docs/customization.md).

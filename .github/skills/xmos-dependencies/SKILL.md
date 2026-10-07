@@ -20,9 +20,16 @@ commit is authoritative; `sw_pigigbox/deps.cmake` is a fallback and must match.
 4. `.\scripts\build.ps1 -Clean`; fix errors in the app, not in the library.
 5. Stage the new pin with `git add lib_xyz`. Change one module at a time; recommend hardware testing before flashing.
 
-## Baseline
-Pins reproduce the firmware flashed on the board (sw_usb_audio 9.2.0 set). Do not bump versions as a side effect of
-other work. Major jumps that exist upstream: lib_xassert 5, lib_xcore_math 3, lib_mic_array 7.
+## Current state
+All modules are on the newest stable tag except two held back on purpose (details in `docs/dependencies.md`):
+- `lib_sw_pll` stays on v2.4.1 (v2.5.0 changes the `sw_pll_*` init API; lib_board_support 1.5.0 not adapted).
+- `lib_xassert` stays on v4.3.2 (v5.0.0 defines `UNSAFE` as `unsafe`, breaking lib_board_support 1.5.0).
+`lib_dfu` is required by lib_xua >= 5.4. The original baseline (sw_usb_audio 9.2.0 set, lib_xua 5.2.0) matched the flashed
+firmware bit for bit; the updated set builds but is not hardware-tested. Do not bump versions as a side effect of other work.
+
+## How to judge a bump
+Read what the newest lib_xua / lib_board_support declare in `LIB_DEPENDENT_MODULES` (`lib_*/lib_*/lib_build_info.cmake`):
+those are the combinations XMOS tested. Newer tags of a dependency than declared may be API-breaking; build to find out.
 
 ## Upstream reference
 `sw_usb_audio` (submodule) is untouched upstream. `.\scripts\diff-upstream.ps1` shows local app deviations.
