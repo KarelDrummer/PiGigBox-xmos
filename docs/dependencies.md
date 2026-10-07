@@ -23,7 +23,7 @@ never touches modules that are already present, so the submodule commit **is** t
 | lib_xcore_math | v2.4.0 | v3.0.0 |
 | sw_usb_audio (reference only) | v9.2.0 | v9.2.0 |
 
-Run `sh scripts/deps-status.sh` (Git Bash) for the current state.
+Run `.\scripts\deps-status.ps1` for the current state.
 
 The pins were chosen deliberately: the goal of the baseline is to reproduce the flashed firmware exactly.
 Several newer tags are major-version bumps (lib_xassert 5, lib_xcore_math 3, lib_mic_array 7) and
@@ -38,11 +38,11 @@ git -C lib_xua checkout v5.5.0
 
 1. Update the matching version in `sw_pigigbox/deps.cmake` (only the four direct dependencies are listed; transitive
    ones such as lib_xud, lib_adat, lib_spdif follow from `lib_xua/lib_xua/lib_build_info.cmake`).
-2. Read the module `CHANGELOG.rst` (breaking changes), rebuild with `scripts\build.cmd clean`.
+2. Read the module `CHANGELOG.rst` (breaking changes), rebuild with `.\scripts\build.ps1 -Clean`.
 3. Keep upgrades in one module at a time, check `sw_pigigbox/app_*/build/manifest.txt` (the versions actually used)
    and test on hardware before `git add lib_xua` (that records the new pin).
 
 ## Updating the upstream reference
 
-Check out a newer `sw_usb_audio` tag, run `sh scripts/diff-upstream.sh` and port wanted changes into
+Check out a newer `sw_usb_audio` tag, run `.\scripts\diff-upstream.ps1` and port wanted changes into
 `sw_pigigbox/app_pigigbox_xk_316_mc` by hand.

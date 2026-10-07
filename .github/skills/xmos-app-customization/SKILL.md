@@ -20,7 +20,7 @@ See `docs/customization.md` for the file map. Core rules:
 ## Workflow
 1. Check upstream behaviour: read `lib_xua/doc` and the matching `xua_conf_full.h` defaults in
    `lib_xua/lib_xua/api/xua_conf_full.h`.
-2. Change the app; keep upstream deviations small and commented (`sh scripts/diff-upstream.sh` lists them).
+2. Change the app; keep upstream deviations small and commented (`.\scripts\diff-upstream.ps1` lists them).
 3. Build (skill `xmos-build-flash`). Check the tile memory report and that constraints PASS.
 4. Test with `xrun` (RAM) before `xflash`.
 

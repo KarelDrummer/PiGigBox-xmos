@@ -6,8 +6,8 @@ XMOS xcore.ai (XK-AUDIO-316-MC) USB Audio firmware built with XTC Tools 15.3 and
   `sw_usb_audio` are git submodules pinned to released tags: never edit or commit inside them.
 - Application: `sw_pigigbox/app_pigigbox_xk_316_mc`, build config `2AMi16o16xxxaax`
   (UAC2, async, I2S master, 16 in/16 out, ADAT, fixed 48 kHz).
-- Build/flash environment is the XTC Tools environment (`scripts\xtc-env.cmd`). PowerShell scripts may be blocked by
-  the execution policy – use the `.cmd` scripts. Build: `scripts\build.cmd`; flash: `scripts\flash.cmd`.
+- Build/flash environment is the XTC Tools environment (`. .\scripts\xtc-env.ps1`, dot-sourced). Helper scripts are PowerShell
+  (`ExecutionPolicy` RemoteSigned for the user is required). Build: `.\scripts\build.ps1 [-Clean]`; flash: `.\scripts\flash.ps1 [-Run] [-AdapterId <id>]`.
 - Source languages: XC (`.xc`), C, assembly. XC syntax (`par`, `chanend`, `select`, `interface`, `[[distributable]]`) is
   not understood by C tooling; rely on `xcc`/`xmake` output, not on IntelliSense, for correctness.
 - Prefer configuration through `xua_conf*.h` defines and the XUA user hooks in `src/extensions/` over patching libraries.

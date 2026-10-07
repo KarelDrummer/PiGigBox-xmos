@@ -19,7 +19,7 @@ The app is a copy of `app_usb_aud_xk_316_mc` from sw_usb_audio 9.2.0 limited to 
 
 The config name encodes the feature set (see the comment in the app `CMakeLists.txt`). To add a variant,
 add another `set(APP_COMPILER_FLAGS_<name> ${PIGIGBOX_FLAGS} -D...)`; each config builds into
-`bin/<name>/`. Update the paths in `.vscode/tasks.json` and `scripts/flash.cmd` if you want to flash another one.
+`bin/<name>/`. Update the paths in `.vscode/tasks.json` and `scripts/flash.ps1` if you want to flash another one.
 Upstream's other configs (S/PDIF, MIDI, hiBW 800 MHz, mixer, TDM…) are in
 `sw_usb_audio/app_usb_aud_xk_316_mc/configs_*.cmake` for reference.
 

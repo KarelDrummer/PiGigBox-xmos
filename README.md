@@ -37,12 +37,12 @@ designed for that (`xua_conf*.h` defines and the user hooks in `src/extensions/`
 
 ## Getting started
 
-```
+```powershell
 git clone --recurse-submodules git@github.com:KarelDrummer/PiGigBox-xmos.git
 cd PiGigBox-xmos
-scripts\build.cmd              rem configure + build, output in sw_pigigbox\app_pigigbox_xk_316_mc\bin\
-scripts\flash.cmd              rem xflash to the board   (scripts\flash.cmd run = xrun from RAM)
-scripts\open-vscode.cmd        rem VS Code with the XTC environment
+.\scripts\build.ps1              # configure + build, output in sw_pigigbox\app_pigigbox_xk_316_mc\bin\
+.\scripts\flash.ps1              # xflash to the board   (.\scripts\flash.ps1 -Run = xrun from RAM)
+.\scripts\open-vscode.ps1        # VS Code with the XTC environment
 ```
 
 (`git submodule update --init` if you forgot `--recurse-submodules`.)
@@ -50,7 +50,7 @@ scripts\open-vscode.cmd        rem VS Code with the XTC environment
 ### VS Code
 
 As described in the XTC Tools guide ("Using VS Code"), VS Code must inherit the XTC environment, so start
-it with `scripts\open-vscode.cmd` (close other VS Code windows first). Then use the *Task Runner* view or
+it with `scripts\open-vscode.ps1` (close other VS Code windows first). Then use the *Task Runner* view or
 *Terminal → Run Task…*: `XMOS: Build`, `XMOS: Flash …`, `XMOS: Run …`, `XMOS: Debug (xgdb)`.
 If you prefer the CMake Tools panel, pick the **[Unspecified]** kit; `.vscode/settings.json` already sets
 the `Unix Makefiles` generator and the application source directory. If several xTAGs are connected, add
@@ -58,7 +58,7 @@ the `Unix Makefiles` generator and the application source directory. If several 
 
 ## Baseline vs. upstream
 
-`scripts/diff-upstream.sh` (Git Bash) shows the delta against upstream. Currently only
+`scripts\diff-upstream.ps1` shows the delta against upstream. Currently only
 `MIN_FREQ`/`MAX_FREQ` = 48000 in `xua_conf.h`. The baseline build was verified against the flashed
 firmware: identical code and data (only embedded source paths differ).
 
