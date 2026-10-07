@@ -1,0 +1,28 @@
+{
+    // Required by XMOS XCommon CMake projects (XTC Tools guide, "Using VS Code")
+    "cmake.generator": "Unix Makefiles",
+
+    // The application is not at the repository root, so point CMake Tools at it.
+    // XCommon CMake expects the default build dir: <app>/build
+    "cmake.sourceDirectory": "${workspaceFolder}/sw_pigigbox/app_pigigbox_xk_316_mc",
+    "cmake.configureOnOpen": false,
+
+    // XC and XN sources
+    "files.associations": {
+        "*.xc": "c",
+        "*.xn": "xml",
+        "*.S": "asm-intel-x86"
+    },
+
+    // The sandbox holds 14 submodules; the default limit is 10
+    "git.detectSubmodulesLimit": 20,
+
+    "search.exclude": {
+        "**/build": true,
+        "**/bin": true
+    },
+    "files.watcherExclude": {
+        "**/build/**": true,
+        "**/bin/**": true
+    }
+}

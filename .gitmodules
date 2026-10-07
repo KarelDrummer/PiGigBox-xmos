@@ -1,0 +1,42 @@
+[submodule "lib_adat"]
+	path = lib_adat
+	url = https://github.com/xmos/lib_adat.git
+[submodule "lib_board_support"]
+	path = lib_board_support
+	url = https://github.com/xmos/lib_board_support.git
+[submodule "lib_i2c"]
+	path = lib_i2c
+	url = https://github.com/xmos/lib_i2c.git
+[submodule "lib_i2s"]
+	path = lib_i2s
+	url = https://github.com/xmos/lib_i2s.git
+[submodule "lib_locks"]
+	path = lib_locks
+	url = https://github.com/xmos/lib_locks.git
+[submodule "lib_logging"]
+	path = lib_logging
+	url = https://github.com/xmos/lib_logging.git
+[submodule "lib_mic_array"]
+	path = lib_mic_array
+	url = https://github.com/xmos/lib_mic_array.git
+[submodule "lib_spdif"]
+	path = lib_spdif
+	url = https://github.com/xmos/lib_spdif.git
+[submodule "lib_sw_pll"]
+	path = lib_sw_pll
+	url = https://github.com/xmos/lib_sw_pll.git
+[submodule "lib_xassert"]
+	path = lib_xassert
+	url = https://github.com/xmos/lib_xassert.git
+[submodule "lib_xcore_math"]
+	path = lib_xcore_math
+	url = https://github.com/xmos/lib_xcore_math.git
+[submodule "lib_xua"]
+	path = lib_xua
+	url = https://github.com/xmos/lib_xua.git
+[submodule "lib_xud"]
+	path = lib_xud
+	url = https://github.com/xmos/lib_xud.git
+[submodule "sw_usb_audio"]
+	path = sw_usb_audio
+	url = https://github.com/xmos/sw_usb_audio.git

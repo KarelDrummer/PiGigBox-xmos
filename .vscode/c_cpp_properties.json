@@ -1,0 +1,21 @@
+{
+    "version": 4,
+    "configurations": [
+        {
+            "name": "XMOS xcore (headers only)",
+            // IntelliSense for C headers; XC (.xc) files are not understood by C/C++ tooling.
+            "includePath": [
+                "${workspaceFolder}/sw_pigigbox/app_pigigbox_xk_316_mc/src/**",
+                "${workspaceFolder}/sw_pigigbox/shared",
+                "${workspaceFolder}/lib_*/lib_*/api/**",
+                "${workspaceFolder}/lib_*/lib_*/src/**",
+                "${env:XMOS_TOOL_PATH}/target/include",
+                "${env:XMOS_TOOL_PATH}/target/include/clang"
+            ],
+            "defines": ["__XS3A__=1", "__xcore__=1"],
+            "cStandard": "c11",
+            "cppStandard": "c++11",
+            "intelliSenseMode": "clang-x86"
+        }
+    ]
+}

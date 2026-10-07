@@ -1,0 +1,13 @@
+# XCommon CMake output
+build/
+bin/
+.build_*/
+manifest.txt
+
+# Editor / OS
+.vscode/.browse.*
+.vscode/ipch/
+.cache/
+compile_commands.json
+*.swp
+Thumbs.db

@@ -1,0 +1,8 @@
+{
+    // Install: CMake Tools, Task Runner and C/C++ (as listed in the XMOS XTC Tools guide, "Using VS Code")
+    "recommendations": [
+        "ms-vscode.cmake-tools",
+        "sanaajani.taskrunnercode",
+        "ms-vscode.cpptools"
+    ]
+}

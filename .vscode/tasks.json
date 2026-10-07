@@ -1,0 +1,65 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "XMOS: Configure",
+            "type": "shell",
+            "command": "cmake",
+            "args": ["-G", "Unix Makefiles", "-B", "build"],
+            "options": { "cwd": "${workspaceFolder}/sw_pigigbox/app_pigigbox_xk_316_mc" },
+            "problemMatcher": []
+        },
+        {
+            "label": "XMOS: Build",
+            "type": "shell",
+            "command": "xmake",
+            "args": ["-C", "build", "-j"],
+            "options": { "cwd": "${workspaceFolder}/sw_pigigbox/app_pigigbox_xk_316_mc" },
+            "dependsOn": ["XMOS: Configure"],
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "XMOS: Clean",
+            "type": "shell",
+            "command": "cmake",
+            "args": ["-E", "rm", "-rf", "build", "bin"],
+            "options": { "cwd": "${workspaceFolder}/sw_pigigbox/app_pigigbox_xk_316_mc" },
+            "problemMatcher": []
+        },
+        {
+            "label": "XMOS: List devices",
+            "command": "xrun",
+            "args": ["-l"],
+            "problemMatcher": []
+        },
+        {
+            "label": "XMOS: Run 2AMi16o16xxxaax (RAM, xSCOPE)",
+            "command": "xrun",
+            "args": [
+                // add "--adapter-id", "<id>" here when several xTAGs are connected
+                "--xscope",
+                "${workspaceFolder}/sw_pigigbox/app_pigigbox_xk_316_mc/bin/2AMi16o16xxxaax/app_pigigbox_xk_316_mc_2AMi16o16xxxaax.xe"
+            ],
+            "options": { "cwd": "${workspaceFolder}" },
+            "problemMatcher": []
+        },
+        {
+            "label": "XMOS: Flash 2AMi16o16xxxaax",
+            "command": "xflash",
+            "args": [
+                // add "--adapter-id", "<id>" here when several xTAGs are connected
+                "${workspaceFolder}/sw_pigigbox/app_pigigbox_xk_316_mc/bin/2AMi16o16xxxaax/app_pigigbox_xk_316_mc_2AMi16o16xxxaax.xe"
+            ],
+            "options": { "cwd": "${workspaceFolder}" },
+            "problemMatcher": []
+        },
+        {
+            "label": "XMOS: Debug 2AMi16o16xxxaax (xgdb)",
+            "command": "xgdb",
+            "args": ["${workspaceFolder}/sw_pigigbox/app_pigigbox_xk_316_mc/bin/2AMi16o16xxxaax/app_pigigbox_xk_316_mc_2AMi16o16xxxaax.xe"],
+            "options": { "cwd": "${workspaceFolder}" },
+            "problemMatcher": []
+        }
+    ]
+}
